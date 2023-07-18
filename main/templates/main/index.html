@@ -1,0 +1,20 @@
+{% extends 'main/shablon.html' %}
+
+{% block tittle %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+    <h1 style="color:green">Salom!</h1>
+    {% if tasks %}
+        {% for i in tasks %}
+            <div class="alert alert-success mt-2">
+                <h2>{{ i.title }}</h2>
+                <p>{{ i.task }}</p>
+
+            </div>
+        {% endfor %}
+    {% else %}
+        <p class="alert alert-info alert-dismissible fade show" role="alert">Vazifalar yo'q!</p>
+    {% endif %}
+{% endblock %}

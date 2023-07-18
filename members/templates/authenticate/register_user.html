@@ -1,0 +1,27 @@
+{% extends 'main/shablon.html' %}
+
+{% block tittle %}
+Login
+{% endblock %}
+
+{% block content %}
+
+{% if form.errors %}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+           Formangizda xatolik yuz berdi!
+           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+
+
+
+{% endif %}
+    <h1>Registratsiya</h1>
+    <form action="{% url 'register_user' %}" method="post">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+        <br><br>
+      <button type="submit" class="btn btn-success">submit</button>
+        <span>{{ error }}</span>
+    </form>
+{% endblock %}

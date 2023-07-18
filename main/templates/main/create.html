@@ -1,0 +1,16 @@
+{% extends 'main/shablon.html' %}
+
+{% block tittle %}
+Vazifa qo'shish
+{% endblock %}
+
+{% block content %}
+    <h1>Vazifa qo'shish</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.title }}<br>
+        {{ form.task }}<br>
+      <button type="submit" class="btn btn-success">Qo'shish</button>
+        <span>{{ error }}</span>
+    </form>
+{% endblock %}
